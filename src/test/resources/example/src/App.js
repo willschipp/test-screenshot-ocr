@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -36,7 +35,7 @@ class App extends Component {
     return (
       <div className="App">
         <p className="App-intro">
-          <input type="text" placeholder={this.state.content.placeholder} className="inputField"/>
+          <input type="text" name="someInputField" placeholder={this.state.content.placeholder} className="inputField"/>
         </p>
       </div>
     );

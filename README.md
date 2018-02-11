@@ -24,9 +24,28 @@
 
 ## Prerequesities
 
-- tesseract installed
+- tesseract 
+- node 
+- maven
+- Java IDE
+
 
 ## Example
+
+1. start the node server on the example directory
+`cd src/test/resources/example`
+`npm start`
+2. run the junit test
+3. adjust the css file width size
+`vi src/test/resources/example/src/App.css`
+`inputField { width: 150px; }`
+4. test should fail (doesn't render complete text)
+
+
+## Note
+
+- samples are English and Korean
+- Korean fails due to translation difference from OCR to 
 
 
 
