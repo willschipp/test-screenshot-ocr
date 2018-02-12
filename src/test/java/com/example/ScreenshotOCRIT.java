@@ -8,6 +8,9 @@ import java.util.Map;
 import java.util.UUID;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
@@ -37,12 +40,19 @@ public class ScreenshotOCRIT {
     
     @BeforeClass
     public static void setUp(){
-    		System.setProperty("webdriver.gecko.driver","./bin/mac/geckodriver");
+        //check for URL availability
+        HttpClient client = HttpClientBuilder.create().build();
+        HttpGet get = new HttpGet(URL);
+        try {
+			client.execute(get);
+		} catch (Exception e) {
+			throw new RuntimeException("Failed on server test");
+		}
+        //now setup the selenium driver
+    	System.setProperty("webdriver.gecko.driver","./bin/mac/geckodriver");
         driver = new FirefoxDriver();
         //json
         mapper = new ObjectMapper();
-        //check for URL availability
-        
     }
     
     @AfterClass

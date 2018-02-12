@@ -28,6 +28,7 @@
 - node 
 - maven
 - Java IDE
+- firefox
 
 
 ## Example
