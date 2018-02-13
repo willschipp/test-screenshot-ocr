@@ -8,8 +8,6 @@ import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.Wrapper;
 import org.apache.catalina.startup.Tomcat;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 
 public class TomcatService {
 
@@ -19,12 +17,10 @@ public class TomcatService {
 	
 	public static String docRoot = "src/test/resources/example/build";	
 	
-	@BeforeClass
 	public static void before() throws Exception {
 		startServer(appRoot,docRoot);
 	}
 	
-	@AfterClass
 	public static void after() throws Exception {
 		stopServer();
 	}	
@@ -45,7 +41,6 @@ public class TomcatService {
 		context.addServletMapping("/static/*", "d");
 		context.addServletMapping("/data/*", "d");
 		context.addWelcomeFile("index.html");
-		
 		tomcat.start();
 	}
 	

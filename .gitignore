@@ -2,6 +2,7 @@
 .project
 .settings
 target
+tomcat*
 
 node_modules
 *.log
